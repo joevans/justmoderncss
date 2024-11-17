@@ -24,14 +24,10 @@
       <h3>CSS</h3>
       <ul>
         <li>Nesting!! (needs to be default everywhere)</li>
-        <li>:is()</li>
-        <li>:has()</li>
-        <li>:where()</li>
         <li>Stacked Gradients</li>
         <li>Clip Path</li>
         <li>blend modes</li>
         <li>multiple backgrounds</li>
-        <li>:focus-widthin</li>
         <li>min() & max() & minmax()</li>
         <li>container queries</li>
         <li>CSS reduced motion best practices</li>
@@ -39,6 +35,52 @@
         <li>var() best practices</li>
         <li>clamp()</li>
         <li>CSS functions</li>
+        <li>Counter properties
+          <ul>
+            <li>counter</li>
+            <li>counter-reset</li>
+            <li>reversed</li>
+            <li>counter-increment</li>
+          </ul>
+        </li>
+        <li>Lesser known pseudo-elements
+          <ul>
+            <li>::marker</li>
+            <li>::first-letter</li>
+            <li>:focus-widthin</li>
+            <li>::grammar-error</li>
+            <li>::highlight()</li>
+          </ul>
+        </li>
+        <li>Lesser known pseudo-class selectors
+          <ul>
+            <li>:is()</li>
+            <li>:has()</li>
+            <li>:where()</li>
+            <li>::marker</li>
+            <li>:empty</li>
+            <li>:blank</li>
+            <li>:not</li>
+            <li>:default</li>
+            <li>:valid / :invalid</li>
+          </ul>
+        </li>
+        <li>Interaction Media Queries
+          <ul>
+            <li><pre><code class="language-css">@media (pointer: fine) {
+  /* using a mouse or stylus */
+}
+@media (pointer: coarse) {
+  /* using touch */
+}
+@media (hover: hover) {
+  /* can be hovered */
+}
+@media (hover: none) {
+  /* can't be hovered */
+}</code></pre></li>
+          </ul>
+        </li>
       </ul>
       <h3>Javascript</h3>
       <ul>
@@ -47,6 +89,17 @@
       <h3>HTML</h3>
       <ul>
         <li>Semantic HTML tag best practices</li>
+        <li>Lesser known HTML tags
+          <ul>
+            <li>mark</li>
+            <li>modal</li>
+          </ul>
+        </li>
+        <li>Code/Pre/Samp best practices
+          <ul>
+            <li>Comment I found: Use < code > for inline code that can wrap and < pre >< code > for block code that must not wrap. < samp > is for sample output, so I would avoid using it to represent sample code (which the reader is to input).</li>
+          </ul>
+        </li>
       </ul>
       <h3>Other</h3>
       <ul>
@@ -64,5 +117,9 @@
         <pre><code></code></pre>
       </article>
     </section>
+
+  <link rel="stylesheet" href="https://unpkg.com/@highlightjs/cdn-assets@11.9.0/styles/default.min.css">
+  <script src="https://unpkg.com/@highlightjs/cdn-assets@11.9.0/highlight.min.js"></script>
+  <script>hljs.highlightAll();</script>
   </body>
 </html>
