@@ -134,37 +134,37 @@
         <header>CSS Nesting</header>
         <p>CSS Nesting allows you to write more readable and maintainable styles by nesting selectors within a parent element. This reduces redundancy and keeps related styles grouped together.</p>
         <pre><code class="css">
-            &lt;!-- Without CSS Nesting --&gt;
-            .card {
-                border: 1px solid #ccc;
-                padding: 1rem;
-                margin: 1rem;
-            }
-            .card .title {
-                font-size: 1.5rem;
-                color: #333;
-            }
-            .card .content {
-                font-size: 1rem;
-                color: #666;
-            }
-            
-            &lt;!-- With CSS Nesting --&gt;
-            .card {
-                border: 1px solid #ccc;
-                padding: 1rem;
-                margin: 1rem;
-            
-                .title {
-                    font-size: 1.5rem;
-                    color: #333;
-                }
-            
-                .content {
-                    font-size: 1rem;
-                    color: #666;
-                }
-            }
+/* Without CSS Nesting */
+.card {
+    border: 1px solid #ccc;
+    padding: 1rem;
+    margin: 1rem;
+}
+.card .title {
+    font-size: 1.5rem;
+    color: #333;
+}
+.card .content {
+    font-size: 1rem;
+    color: #666;
+}
+
+&lt;!-- With CSS Nesting --&gt;
+.card {
+    border: 1px solid #ccc;
+    padding: 1rem;
+    margin: 1rem;
+
+    .title {
+        font-size: 1.5rem;
+        color: #333;
+    }
+
+    .content {
+        font-size: 1rem;
+        color: #666;
+    }
+}
         </code></pre>
       </article>
     </section>
