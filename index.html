@@ -15,10 +15,11 @@
       h1{}
       p{}
       section{width:1200px;margin:auto;padding:50px 20px;}
-      article{
-        header{}
+      article{padding:20px;
+        header{font-size: 35px;font-weight: bold;}
         footer{}
       }
+      code{border-radius: 20px;box-shadow: inset -1px -1px 0px 0px rgba(255, 255, 255, .4), 2px 3px 1px 0px rgba(255, 255, 255, .15);max-width: 600px;text-wrap: auto;}
     </style>
   </head>
   <body class="dark">
@@ -132,7 +133,7 @@
       <p>Copy, paste, learn.</p>
       <article>
         <header>CSS Nesting</header>
-        <p>CSS Nesting allows you to write more readable and maintainable styles by nesting selectors within a parent element. This reduces redundancy and keeps related styles grouped together.</p>
+        <main hidden><p>CSS Nesting allows you to write more readable and maintainable styles by nesting selectors within a parent element. This reduces redundancy and keeps related styles grouped together.</p></main>
         <pre><code class="css">
 /* Without CSS Nesting */
 .card {
