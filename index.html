@@ -131,6 +131,7 @@
     <section>
       <h1>Just Modern CSS</h1>
       <p>Copy, paste, learn.</p>
+      <!-- CSS Nesting -->
       <article>
         <header>CSS Nesting</header>
         <dd><p>CSS Nesting allows you to write more readable and maintainable styles by nesting selectors within a parent element. This reduces redundancy and keeps related styles grouped together.</p></dd>
@@ -168,6 +169,159 @@
     }
 }
         </code></pre>
+      </article>
+        
+      <!-- CSS Grid -->
+      <article>
+          <h2>CSS Grid</h2>
+          <p>
+              CSS Grid is a powerful layout system that allows you to create complex, responsive layouts with ease. It works by defining a grid container and placing items within the grid. For example:
+          </p>
+          <pre><code>
+.container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+
+.item {
+  background: #ccc;
+  padding: 20px;
+}
+          </code></pre>
+          <p>
+              This code creates a grid with three equal-width columns and a 10px gap between items.
+          </p>
+      </article>
+      
+      <!-- CSS Flexbox -->
+      <article>
+          <h2>CSS Flexbox</h2>
+          <p>
+              CSS Flexbox is a one-dimensional layout model that allows you to align and distribute space among items in a container. It's particularly useful for creating flexible and responsive layouts. For example:
+          </p>
+          <pre><code>
+.container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.item {
+  flex: 1;
+  margin: 0 10px;
+}
+          </code></pre>
+          <p>
+              This code creates a flex container where items are spaced evenly and take up equal space.
+          </p>
+      </article>
+      
+      <!-- CSS Variables (Custom Properties) -->
+      <article>
+          <h2>CSS Variables (Custom Properties)</h2>
+          <p>
+              CSS Variables, also known as Custom Properties, allow you to store reusable values in your CSS. They can be defined globally or locally and are accessed using the <code>var()</code> function. For example:
+          </p>
+          <pre><code>
+:root {
+  --primary-color: #3498db;
+}
+
+.button {
+  background-color: var(--primary-color);
+}
+          </code></pre>
+          <p>
+              This code defines a global variable <code>--primary-color</code> and uses it to style a button.
+          </p>
+      </article>
+      
+      <!-- CSS Animations -->
+      <article>
+          <h2>CSS Animations</h2>
+          <p>
+              CSS Animations allow you to create smooth transitions and animations on elements. You define keyframes to specify the styles at various points in the animation. For example:
+          </p>
+          <pre><code>
+@keyframes slideIn {
+  from {
+      transform: translateX(-100%);
+  }
+  to {
+      transform: translateX(0);
+  }
+}
+
+.slide-in {
+  animation: slideIn 1s ease-out;
+}
+          </code></pre>
+          <p>
+              This code creates an animation that slides an element in from the left.
+          </p>
+      </article>
+      
+      <!-- CSS Transitions -->
+      <article>
+          <h2>CSS Transitions</h2>
+          <p>
+              CSS Transitions allow you to smoothly change property values over a specified duration. They are often used for hover effects or state changes. For example:
+          </p>
+          <pre><code>
+.button {
+  background-color: #3498db;
+  transition: background-color 0.3s ease;
+}
+
+.button:hover {
+  background-color: #2980b9;
+}
+          </code></pre>
+          <p>
+              This code smoothly transitions the button's background color when hovered over.
+          </p>
+      </article>
+      
+      <!-- CSS Pseudo-elements -->
+      <article>
+          <h2>CSS Pseudo-elements</h2>
+          <p>
+              CSS Pseudo-elements allow you to style specific parts of an element, such as the first letter or the content before or after an element. For example:
+          </p>
+          <pre><code>
+p::first-letter {
+  font-size: 2em;
+  color: #e74c3c;
+}
+
+p::before {
+  content: "Note: ";
+  font-weight: bold;
+}
+          </code></pre>
+          <p>
+              This code styles the first letter of a paragraph and adds a bold "Note: " before the paragraph content.
+          </p>
+      </article>
+      
+      <!-- CSS Pseudo-classes -->
+      <article>
+          <h2>CSS Pseudo-classes</h2>
+          <p>
+              CSS Pseudo-classes allow you to style elements based on their state or position in the document. Common pseudo-classes include <code>:hover</code>, <code>:nth-child</code>, and <code>:focus</code>. For example:
+          </p>
+          <pre><code>
+a:hover {
+  color: #e67e22;
+}
+
+li:nth-child(odd) {
+  background-color: #f9f9f9;
+}
+          </code></pre>
+          <p>
+              This code changes the color of a link when hovered and applies a background color to every odd list item.
+          </p>
       </article>
     </section>
 
