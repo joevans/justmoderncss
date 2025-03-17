@@ -170,159 +170,84 @@
 }
         </code></pre>
       </article>
+
+        <!-- Stacked Gradients -->
+        <article><header>Stacked Gradients</header> <dd><p>Multiple gradient effects layered on top of each other using the background-image property. Creates complex color transitions and depth effects.</p></dd> <pre><code class="css"> /* Single gradient */ .box { background-image: linear-gradient(45deg, red, blue); }
+/* Stacked gradients */
+.box {
+    background-image:
+    linear-gradient(120deg, rgba(255,0,0,0.3), transparent),
+    radial-gradient(circle at center, #00f 0%, #000 100%);
+}
+</code></pre>
+
+</article>
+        <!-- Clip Path --><article> <header>Clip Path</header> <dd><p>Defines a visible region of an element using basic shapes or SVG paths. Everything outside the path becomes transparent.</p></dd> <pre><code class="css"> /* Before: Regular rectangle */ .box { width: 200px; height: 200px; background: #f00; }
+/* After: Triangle shape */
+.box {
+    clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+}
+</code></pre>
+
+</article>
+        <!-- Blend Modes --><article> <header>Blend Modes</header> <dd><p>Controls how element colors mix with their background. Common modes: multiply, screen, overlay. Uses mix-blend-mode or background-blend-mode properties.</p></dd> <pre><code class="css"> /* Before: Simple overlapping */ .parent { background: yellow; } .child { background: blue; }
+/* After: Color blending */
+.child {
+    mix-blend-mode: multiply;
+}
+</code></pre>
+
+</article>
+        <!-- Multiple Backgrounds --><article> <header>Multiple Backgrounds</header> <dd><p>Layers multiple background images on an element, separated by commas. First listed image appears on top.</p></dd> <pre><code class="css"> /* Single background */ .hero { background: url(texture.jpg); }
+/* Layered backgrounds */
+.hero {
+    background:
+        url(overlay.png),
+        url(pattern.svg),
+        linear-gradient(to right, #ff0, #f00);
+}
+</code></pre>
+
+</article>
+        <!-- min() & max() & minmax() --><article> <header>min() & max() & minmax()</header> <dd><p>CSS functions for responsive sizing. min() uses smaller value, max() uses larger value. minmax() defines size range for grid tracks.</p></dd> <pre><code class="css"> /* Fluid typography */ h1 { font-size: max(2rem, min(5vw, 3rem)); }
+/* Grid layout */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+</code></pre>
+
+</article>
+        <!-- Container Queries --><article> <header>Container Queries</header> <dd><p>Styles elements based on parent container's size rather than viewport. Enables truly component-responsive design.</p></dd> <pre><code class="css"> /* Define container */ .card-parent { container-type: inline-size; }
+/* Container-based styling */
+@container (min-width: 400px) {
+    .card {
+        flex-direction: row;
+    }
+}
+</code></pre>
+
+</article><!-- CSS Reduced Motion Best Practices --><article> <header>CSS Reduced Motion Best Practices</header> <dd><p>Respects user's motion preferences through media queries. Essential for accessibility and preventing motion sickness.</p></dd> <pre><code class="css"> /* Before: Always animate */ .spinner { animation: spin 2s infinite; }
+/* After: Conditional animation */
+@media (prefers-reduced-motion: no-preference) {
+    .spinner {
+        animation: spin 2s infinite;
+    }
+}
+</code></pre>
+
+</article>
+        <!-- CSS Accessibility Best Practices --><article> <header>CSS Accessibility Best Practices</header> <dd><p>Relative units (rem, ch) maintain accessibility better than absolute units (px). 1rem = root font-size, 1ch = width of "0" character.</p></dd> <pre><code class="css"> /* Before: Fixed sizing */ p { font-size: 16px; width: 500px; }
+/* After: Accessible sizing /
+p {
+    font-size: 1rem; / Scales with user's settings /
+    width: 60ch; / Optimal reading line length */
+}
+</code></pre>
+
+</article>
+
         
-      <!-- CSS Grid -->
-      <article>
-          <h2>CSS Grid</h2>
-          <p>
-              CSS Grid is a powerful layout system that allows you to create complex, responsive layouts with ease. It works by defining a grid container and placing items within the grid. For example:
-          </p>
-          <pre><code>
-.container {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 10px;
-}
-
-.item {
-  background: #ccc;
-  padding: 20px;
-}
-          </code></pre>
-          <p>
-              This code creates a grid with three equal-width columns and a 10px gap between items.
-          </p>
-      </article>
-      
-      <!-- CSS Flexbox -->
-      <article>
-          <h2>CSS Flexbox</h2>
-          <p>
-              CSS Flexbox is a one-dimensional layout model that allows you to align and distribute space among items in a container. It's particularly useful for creating flexible and responsive layouts. For example:
-          </p>
-          <pre><code>
-.container {
-  display: flex;
-  justify-content: space-between;
-}
-
-.item {
-  flex: 1;
-  margin: 0 10px;
-}
-          </code></pre>
-          <p>
-              This code creates a flex container where items are spaced evenly and take up equal space.
-          </p>
-      </article>
-      
-      <!-- CSS Variables (Custom Properties) -->
-      <article>
-          <h2>CSS Variables (Custom Properties)</h2>
-          <p>
-              CSS Variables, also known as Custom Properties, allow you to store reusable values in your CSS. They can be defined globally or locally and are accessed using the <code>var()</code> function. For example:
-          </p>
-          <pre><code>
-:root {
-  --primary-color: #3498db;
-}
-
-.button {
-  background-color: var(--primary-color);
-}
-          </code></pre>
-          <p>
-              This code defines a global variable <code>--primary-color</code> and uses it to style a button.
-          </p>
-      </article>
-      
-      <!-- CSS Animations -->
-      <article>
-          <h2>CSS Animations</h2>
-          <p>
-              CSS Animations allow you to create smooth transitions and animations on elements. You define keyframes to specify the styles at various points in the animation. For example:
-          </p>
-          <pre><code>
-@keyframes slideIn {
-  from {
-      transform: translateX(-100%);
-  }
-  to {
-      transform: translateX(0);
-  }
-}
-
-.slide-in {
-  animation: slideIn 1s ease-out;
-}
-          </code></pre>
-          <p>
-              This code creates an animation that slides an element in from the left.
-          </p>
-      </article>
-      
-      <!-- CSS Transitions -->
-      <article>
-          <h2>CSS Transitions</h2>
-          <p>
-              CSS Transitions allow you to smoothly change property values over a specified duration. They are often used for hover effects or state changes. For example:
-          </p>
-          <pre><code>
-.button {
-  background-color: #3498db;
-  transition: background-color 0.3s ease;
-}
-
-.button:hover {
-  background-color: #2980b9;
-}
-          </code></pre>
-          <p>
-              This code smoothly transitions the button's background color when hovered over.
-          </p>
-      </article>
-      
-      <!-- CSS Pseudo-elements -->
-      <article>
-          <h2>CSS Pseudo-elements</h2>
-          <p>
-              CSS Pseudo-elements allow you to style specific parts of an element, such as the first letter or the content before or after an element. For example:
-          </p>
-          <pre><code>
-p::first-letter {
-  font-size: 2em;
-  color: #e74c3c;
-}
-
-p::before {
-  content: "Note: ";
-  font-weight: bold;
-}
-          </code></pre>
-          <p>
-              This code styles the first letter of a paragraph and adds a bold "Note: " before the paragraph content.
-          </p>
-      </article>
-      
-      <!-- CSS Pseudo-classes -->
-      <article>
-          <h2>CSS Pseudo-classes</h2>
-          <p>
-              CSS Pseudo-classes allow you to style elements based on their state or position in the document. Common pseudo-classes include <code>:hover</code>, <code>:nth-child</code>, and <code>:focus</code>. For example:
-          </p>
-          <pre><code>
-a:hover {
-  color: #e67e22;
-}
-
-li:nth-child(odd) {
-  background-color: #f9f9f9;
-}
-          </code></pre>
-          <p>
-              This code changes the color of a link when hovered and applies a background color to every odd list item.
-          </p>
-      </article>
     </section>
 
   <link rel="stylesheet" href="https://unpkg.com/@highlightjs/cdn-assets@11.9.0/styles/atom-one-dark.min.css">
